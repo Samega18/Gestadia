@@ -16,6 +16,7 @@ import IconFW from '@expo/vector-icons/Ionicons';
 //import IconFound from '@expo/vector-icons/Foundation';
 
 import Home from '../Home';
+import Profile from '../Profile';
 
 const IconBar = ({iconName, label, colorPrimary, colorSecundary, colorTerciary, sizeBar, sizeBar2, selected, valueSelect, change}) =>{
 
@@ -62,7 +63,7 @@ function BarNavigate({ navigation }){
         <View style={[ styles.screen, { backgroundColor: colorSecundary }]}>
           {screenSelected == 0 && <Home/>}
           {screenSelected == 1 && <Text>Tela 2</Text>}
-          {screenSelected == 2 && <Text>Tela 3</Text>}
+          {screenSelected == 2 && <Profile/>}
 
         </View>
         <View style={[ styles.barNavigateContainer, { backgroundColor: colorSecundary, borderColor: "#A78BFA"}]}>
