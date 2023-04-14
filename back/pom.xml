@@ -10,7 +10,7 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
     <name>Gestadia</name>
-    <description>Description for Gestadia</description>
+    <description>Description for gestadia</description>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -994,7 +994,7 @@
                                 <driver>org.h2.Driver</driver>
                                 <url>jdbc:h2:file:${project.build.directory}/h2db/db/gestadia</url>
                                 <defaultSchemaName></defaultSchemaName>
-                                <username>Gestadia</username>
+                                <username>gestadia</username>
                                 <password></password>
                                 <referenceUrl>hibernate:spring:com.milos.gestadia.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                                 <verbose>true</verbose>
@@ -1096,8 +1096,8 @@
                                 <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                                 <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                                 <driver>com.mysql.cj.jdbc.Driver</driver>
-                                <url>jdbc:mysql://localhost:3306/Gestadia</url>
-                                <defaultSchemaName>Gestadia</defaultSchemaName>
+                                <url>jdbc:mysql://localhost:3306/gestadia</url>
+                                <defaultSchemaName>gestadia</defaultSchemaName>
                                 <username>root</username>
                                 <password></password>
                                 <referenceUrl>hibernate:spring:com.milos.gestadia.domain?dialect=org.hibernate.dialect.MySQL8Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>

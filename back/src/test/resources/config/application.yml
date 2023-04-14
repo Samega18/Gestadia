@@ -17,12 +17,12 @@ eureka:
   client:
     enabled: false
   instance:
-    appname: Gestadia
-    instanceId: Gestadia:${spring.application.instance-id:${random.value}}
+    appname: gestadia
+    instanceId: gestadia:${spring.application.instance-id:${random.value}}
 
 spring:
   application:
-    name: Gestadia
+    name: gestadia
   cloud:
     config:
       enabled: false
@@ -65,7 +65,7 @@ jhipster:
   clientApp:
     name: 'gestadiaApp'
   mail:
-    from: Gestadia@localhost.com
+    from: gestadia@localhost.com
     base-url: http://127.0.0.1:8080
   logging:
     # To test json console appender
@@ -79,7 +79,7 @@ jhipster:
     authentication:
       jwt:
         # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-        base64-secret: NDY0ZGIxZTA3OTNiMWVjZGViN2Q0YmU0MWVjMWY5YmE4N2RjZjk2MjM5YTdhNmQzMWI1YzRmMTllNDA4YTM2YTJiOWE3YzY5ZjcyZTg0OGNhYWI0MGZjNjA1YjA5YWEyN2E0OTkyZWZkNWYzYWVlZWQzYTIzNGUwNDQ0NGNlZmM=
+        base64-secret: Y2NhOThmNjBhOGJkYzE3YmRkNzUwMGIyN2Q4NjM1YzA1NmQ4NzdlYTU4MzBmYWM2MTlkYzE3YzM2YjhkNTlmMTU0NmI3NjE0MjM4MjkyYWEyOThhYjlmNjI2ZTc1Mzc0MTJkZTZiMDJkYzdlZGE0NWNhNGIyYmJkOGFmNmEzYjI=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
 

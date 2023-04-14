@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Translate, translate, ValidatedField, ValidatedForm, isEmail } from 'react-jhipster';
+import { ValidatedField, ValidatedForm, isEmail } from 'react-jhipster';
 import { Row, Col, Alert, Button } from 'reactstrap';
 import { toast } from 'react-toastify';
 
@@ -18,10 +18,8 @@ export const RegisterPage = () => {
     []
   );
 
-  const currentLocale = useAppSelector(state => state.locale.currentLocale);
-
   const handleValidSubmit = ({ username, email, firstPassword }) => {
-    dispatch(handleRegister({ login: username, email, password: firstPassword, langKey: currentLocale }));
+    dispatch(handleRegister({ login: username, email, password: firstPassword, langKey: 'en' }));
   };
 
   const updatePassword = event => setPassword(event.target.value);
@@ -30,7 +28,7 @@ export const RegisterPage = () => {
 
   useEffect(() => {
     if (successMessage) {
-      toast.success(translate(successMessage));
+      toast.success(successMessage);
     }
   }, [successMessage]);
 
@@ -39,7 +37,7 @@ export const RegisterPage = () => {
       <Row className="justify-content-center">
         <Col md="8">
           <h1 id="register-title" data-cy="registerTitle">
-            <Translate contentKey="register.title">Registration</Translate>
+            Cadastro
           </h1>
         </Col>
       </Row>
@@ -48,77 +46,71 @@ export const RegisterPage = () => {
           <ValidatedForm id="register-form" onSubmit={handleValidSubmit}>
             <ValidatedField
               name="username"
-              label={translate('global.form.username.label')}
-              placeholder={translate('global.form.username.placeholder')}
+              label="Usuário"
+              placeholder="Seu usuário"
               validate={{
-                required: { value: true, message: translate('register.messages.validate.login.required') },
+                required: { value: true, message: 'O usuário é obrigatório.' },
                 pattern: {
                   value: /^[a-zA-Z0-9!$&*+=?^_`{|}~.-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$|^[_.@A-Za-z0-9-]+$/,
-                  message: translate('register.messages.validate.login.pattern'),
+                  message: 'Your username is invalid.',
                 },
-                minLength: { value: 1, message: translate('register.messages.validate.login.minlength') },
-                maxLength: { value: 50, message: translate('register.messages.validate.login.maxlength') },
+                minLength: { value: 1, message: 'O usuário deve ter pelo menos 1 caractere.' },
+                maxLength: { value: 50, message: 'O usuário não pode ter mais de 50 caracteres.' },
               }}
               data-cy="username"
             />
             <ValidatedField
               name="email"
-              label={translate('global.form.email.label')}
-              placeholder={translate('global.form.email.placeholder')}
+              label="E-mail"
+              placeholder="Seu e-mail"
               type="email"
               validate={{
-                required: { value: true, message: translate('global.messages.validate.email.required') },
-                minLength: { value: 5, message: translate('global.messages.validate.email.minlength') },
-                maxLength: { value: 254, message: translate('global.messages.validate.email.maxlength') },
-                validate: v => isEmail(v) || translate('global.messages.validate.email.invalid'),
+                required: { value: true, message: 'O e-mail é obrigatório.' },
+                minLength: { value: 5, message: 'O e-mail deve ter pelo menos 5 caracteres' },
+                maxLength: { value: 254, message: 'O e-mail não pode ter mais de 50 caracteres' },
+                validate: v => isEmail(v) || 'E-mail inválido.',
               }}
               data-cy="email"
             />
             <ValidatedField
               name="firstPassword"
-              label={translate('global.form.newpassword.label')}
-              placeholder={translate('global.form.newpassword.placeholder')}
+              label="Nova senha"
+              placeholder="Nova senha"
               type="password"
               onChange={updatePassword}
               validate={{
-                required: { value: true, message: translate('global.messages.validate.newpassword.required') },
-                minLength: { value: 4, message: translate('global.messages.validate.newpassword.minlength') },
-                maxLength: { value: 50, message: translate('global.messages.validate.newpassword.maxlength') },
+                required: { value: true, message: 'A senha é obrigatória.' },
+                minLength: { value: 4, message: 'A senha deve ter pelo menos 4 caracteres' },
+                maxLength: { value: 50, message: 'A senha não pode ter mais de 50 caracteres' },
               }}
               data-cy="firstPassword"
             />
             <PasswordStrengthBar password={password} />
             <ValidatedField
               name="secondPassword"
-              label={translate('global.form.confirmpassword.label')}
-              placeholder={translate('global.form.confirmpassword.placeholder')}
+              label="Confirmação de nova senha"
+              placeholder="Confirme a nova senha"
               type="password"
               validate={{
-                required: { value: true, message: translate('global.messages.validate.confirmpassword.required') },
-                minLength: { value: 4, message: translate('global.messages.validate.confirmpassword.minlength') },
-                maxLength: { value: 50, message: translate('global.messages.validate.confirmpassword.maxlength') },
-                validate: v => v === password || translate('global.messages.error.dontmatch'),
+                required: { value: true, message: 'A confirmação da senha é obrigatória.' },
+                minLength: { value: 4, message: 'A confirmação da senha deve ter pelo menos 4 caracteres' },
+                maxLength: { value: 50, message: 'A confirmação da senha não pode ter mais de 50 caracteres' },
+                validate: v => v === password || 'A senha e sua confirmação devem ser iguais!',
               }}
               data-cy="secondPassword"
             />
             <Button id="register-submit" color="primary" type="submit" data-cy="submit">
-              <Translate contentKey="register.form.button">Register</Translate>
+              Cadastrar
             </Button>
           </ValidatedForm>
           <p>&nbsp;</p>
           <Alert color="warning">
+            <span>Se deseja</span>
+            <a className="alert-link">entrar</a>
             <span>
-              <Translate contentKey="global.messages.info.authenticated.prefix">If you want to </Translate>
-            </span>
-            <a className="alert-link">
-              <Translate contentKey="global.messages.info.authenticated.link"> sign in</Translate>
-            </a>
-            <span>
-              <Translate contentKey="global.messages.info.authenticated.suffix">
-                , you can try the default accounts:
-                <br />- Administrator (login=&quot;admin&quot; and password=&quot;admin&quot;)
-                <br />- User (login=&quot;user&quot; and password=&quot;user&quot;).
-              </Translate>
+              , utilize as seguintes contas padrões:
+              <br />- Administrador (usuário=&quot;admin&quot; and senha=&quot;admin&quot;) <br />- Usuário (usuário=&quot;user&quot; e
+              senha=&quot;user&quot;).
             </span>
           </Alert>
         </Col>
