@@ -1,0 +1,26 @@
+{
+  "gestadiaApp": {
+    "users": {
+      "home": {
+        "title": "Users",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Users",
+        "createOrEditLabel": "Criar ou editar Users",
+        "notFound": "Nenhum Users encontrado"
+      },
+      "created": "Um novo Users foi criado com o identificador {{ param }}",
+      "updated": "Um Users foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Users foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Users {{ id }}?"
+      },
+      "detail": {
+        "title": "Users"
+      },
+      "id": "ID",
+      "name": "Name",
+      "password": "Password",
+      "email": "Email"
+    }
+  }
+}

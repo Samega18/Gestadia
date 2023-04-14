@@ -1,0 +1,7 @@
+com\milos\gestadia\repository\UsersRepositoryInternal.class
+com\milos\gestadia\repository\UsersRepository.class
+com\milos\gestadia\domain\Users.class
+com\milos\gestadia\web\rest\UsersResource.class
+com\milos\gestadia\repository\UsersRepositoryInternalImpl.class
+com\milos\gestadia\repository\rowmapper\UsersRowMapper.class
+com\milos\gestadia\repository\UsersSqlHelper.class
