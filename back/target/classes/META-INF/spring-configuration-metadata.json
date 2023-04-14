@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "application",
+      "type": "com.milos.gestadia.config.ApplicationProperties",
+      "sourceType": "com.milos.gestadia.config.ApplicationProperties"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}
