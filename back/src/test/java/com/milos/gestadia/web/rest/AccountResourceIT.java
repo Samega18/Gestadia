@@ -2,14 +2,12 @@ package com.milos.gestadia.web.rest;
 
 import static com.milos.gestadia.web.rest.AccountResourceIT.TEST_USER_LOGIN;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 import com.milos.gestadia.IntegrationTest;
 import com.milos.gestadia.config.Constants;
 import com.milos.gestadia.domain.User;
 import com.milos.gestadia.repository.AuthorityRepository;
 import com.milos.gestadia.repository.UserRepository;
-import com.milos.gestadia.repository.search.UserSearchRepository;
 import com.milos.gestadia.security.AuthoritiesConstants;
 import com.milos.gestadia.service.UserService;
 import com.milos.gestadia.service.dto.AdminUserDTO;
@@ -28,7 +26,6 @@ import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Mono;
 
 /**
  * Integration tests for the {@link AccountResource} REST controller.

@@ -2,8 +2,6 @@ package com.milos.gestadia;
 
 import com.milos.gestadia.GestadiaApp;
 import com.milos.gestadia.config.AsyncSyncConfiguration;
-import com.milos.gestadia.config.EmbeddedElasticsearch;
-import com.milos.gestadia.config.EmbeddedKafka;
 import com.milos.gestadia.config.EmbeddedSQL;
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -18,8 +16,6 @@ import org.springframework.test.annotation.DirtiesContext;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 @SpringBootTest(classes = { GestadiaApp.class, AsyncSyncConfiguration.class })
-@EmbeddedElasticsearch
-@EmbeddedKafka
 @EmbeddedSQL
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_CLASS)
 public @interface IntegrationTest {

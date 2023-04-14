@@ -1,7 +1,6 @@
 package com.milos.gestadia.web.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 import com.milos.gestadia.IntegrationTest;
 import com.milos.gestadia.config.Constants;
@@ -10,7 +9,6 @@ import com.milos.gestadia.domain.User;
 import com.milos.gestadia.repository.AuthorityRepository;
 import com.milos.gestadia.repository.EntityManager;
 import com.milos.gestadia.repository.UserRepository;
-import com.milos.gestadia.repository.search.UserSearchRepository;
 import com.milos.gestadia.security.AuthoritiesConstants;
 import com.milos.gestadia.service.dto.AdminUserDTO;
 import com.milos.gestadia.service.mapper.UserMapper;
@@ -26,7 +24,6 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Mono;
 
 /**
  * Integration tests for the {@link UserResource} REST controller.
@@ -64,9 +61,6 @@ class UserResourceIT {
 
     @Autowired
     private AuthorityRepository authorityRepository;
-
-    @Autowired
-    private UserSearchRepository userSearchRepository;
 
     @Autowired
     private UserMapper userMapper;
@@ -164,8 +158,6 @@ class UserResourceIT {
             assertThat(testUser.getImageUrl()).isEqualTo(DEFAULT_IMAGEURL);
             assertThat(testUser.getLangKey()).isEqualTo(DEFAULT_LANGKEY);
         });
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
@@ -196,15 +188,12 @@ class UserResourceIT {
 
         // Validate the User in the database
         assertPersistedUsers(users -> assertThat(users).hasSize(databaseSizeBeforeCreate));
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
     void createUserWithExistingLogin() throws Exception {
         // Initialize the database
         userRepository.save(user).block();
-        userSearchRepository.save(user).block();
         int databaseSizeBeforeCreate = userRepository.findAll().collectList().block().size();
 
         ManagedUserVM managedUserVM = new ManagedUserVM();
@@ -230,15 +219,12 @@ class UserResourceIT {
 
         // Validate the User in the database
         assertPersistedUsers(users -> assertThat(users).hasSize(databaseSizeBeforeCreate));
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
     void createUserWithExistingEmail() throws Exception {
         // Initialize the database
         userRepository.save(user).block();
-        userSearchRepository.save(user).block();
         int databaseSizeBeforeCreate = userRepository.findAll().collectList().block().size();
 
         ManagedUserVM managedUserVM = new ManagedUserVM();
@@ -264,8 +250,6 @@ class UserResourceIT {
 
         // Validate the User in the database
         assertPersistedUsers(users -> assertThat(users).hasSize(databaseSizeBeforeCreate));
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
@@ -298,8 +282,6 @@ class UserResourceIT {
         assertThat(foundUser.getImageUrl()).isEqualTo(DEFAULT_IMAGEURL);
         assertThat(foundUser.getLangKey()).isEqualTo(DEFAULT_LANGKEY);
         assertThat(foundUser.getAuthorities()).containsExactly(AuthoritiesConstants.USER);
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
@@ -310,8 +292,6 @@ class UserResourceIT {
             .findById(AuthoritiesConstants.USER)
             .flatMap(authority -> userRepository.saveUserAuthority(user.getId(), authority.getName()))
             .block();
-
-        userSearchRepository.save(user);
 
         // Get the user
         webTestClient
@@ -337,8 +317,6 @@ class UserResourceIT {
             .isEqualTo(DEFAULT_LANGKEY)
             .jsonPath("$.authorities")
             .isEqualTo(AuthoritiesConstants.USER);
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
@@ -390,8 +368,6 @@ class UserResourceIT {
             assertThat(testUser.getImageUrl()).isEqualTo(UPDATED_IMAGEURL);
             assertThat(testUser.getLangKey()).isEqualTo(UPDATED_LANGKEY);
         });
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
@@ -439,15 +415,12 @@ class UserResourceIT {
             assertThat(testUser.getImageUrl()).isEqualTo(UPDATED_IMAGEURL);
             assertThat(testUser.getLangKey()).isEqualTo(UPDATED_LANGKEY);
         });
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
     void updateUserExistingEmail() throws Exception {
         // Initialize the database with 2 users
         userRepository.save(user).block();
-        userSearchRepository.save(user);
 
         User anotherUser = new User();
         anotherUser.setLogin("jhipster");
@@ -460,7 +433,6 @@ class UserResourceIT {
         anotherUser.setLangKey("en");
         anotherUser.setCreatedBy(Constants.SYSTEM);
         userRepository.save(anotherUser).block();
-        userSearchRepository.save(anotherUser);
 
         // Update the user
         User updatedUser = userRepository.findById(user.getId()).block();
@@ -489,15 +461,12 @@ class UserResourceIT {
             .exchange()
             .expectStatus()
             .isBadRequest();
-
-        userSearchRepository.deleteAll();
     }
 
     @Test
     void updateUserExistingLogin() throws Exception {
         // Initialize the database
         userRepository.save(user).block();
-        userSearchRepository.save(user);
 
         User anotherUser = new User();
         anotherUser.setLogin("jhipster");
@@ -510,7 +479,6 @@ class UserResourceIT {
         anotherUser.setLangKey("en");
         anotherUser.setCreatedBy(Constants.SYSTEM);
         userRepository.save(anotherUser).block();
-        userSearchRepository.save(anotherUser);
 
         // Update the user
         User updatedUser = userRepository.findById(user.getId()).block();
@@ -539,8 +507,6 @@ class UserResourceIT {
             .exchange()
             .expectStatus()
             .isBadRequest();
-
-        userSearchRepository.deleteAll();
     }
 
     @Test

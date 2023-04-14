@@ -1,14 +1,12 @@
 package com.milos.gestadia.web.rest;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.*;
 
 import com.milos.gestadia.IntegrationTest;
 import com.milos.gestadia.config.Constants;
 import com.milos.gestadia.domain.User;
 import com.milos.gestadia.repository.EntityManager;
 import com.milos.gestadia.repository.UserRepository;
-import com.milos.gestadia.repository.search.UserSearchRepository;
 import com.milos.gestadia.security.AuthoritiesConstants;
 import com.milos.gestadia.service.dto.UserDTO;
 import org.junit.jupiter.api.BeforeEach;
@@ -18,7 +16,6 @@ import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWeb
 import org.springframework.http.MediaType;
 import org.springframework.security.test.context.support.WithMockUser;
 import org.springframework.test.web.reactive.server.WebTestClient;
-import reactor.core.publisher.Mono;
 
 /**
  * Integration tests for the {@link UserResource} REST controller.
@@ -32,14 +29,6 @@ class PublicUserResourceIT {
 
     @Autowired
     private UserRepository userRepository;
-
-    /**
-     * This repository is mocked in the com.milos.gestadia.repository.search test package.
-     *
-     * @see com.milos.gestadia.repository.search.UserSearchRepositoryMockConfiguration
-     */
-    @Autowired
-    private UserSearchRepository mockUserSearchRepository;
 
     @Autowired
     private EntityManager em;

@@ -5,7 +5,6 @@ import com.milos.gestadia.domain.Authority;
 import com.milos.gestadia.domain.User;
 import com.milos.gestadia.repository.AuthorityRepository;
 import com.milos.gestadia.repository.UserRepository;
-import com.milos.gestadia.repository.search.UserSearchRepository;
 import com.milos.gestadia.security.AuthoritiesConstants;
 import com.milos.gestadia.security.SecurityUtils;
 import com.milos.gestadia.service.dto.AdminUserDTO;
@@ -39,19 +38,11 @@ public class UserService {
 
     private final PasswordEncoder passwordEncoder;
 
-    private final UserSearchRepository userSearchRepository;
-
     private final AuthorityRepository authorityRepository;
 
-    public UserService(
-        UserRepository userRepository,
-        PasswordEncoder passwordEncoder,
-        UserSearchRepository userSearchRepository,
-        AuthorityRepository authorityRepository
-    ) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
-        this.userSearchRepository = userSearchRepository;
         this.authorityRepository = authorityRepository;
     }
 
@@ -66,7 +57,6 @@ public class UserService {
                 user.setActivationKey(null);
                 return saveUser(user);
             })
-            .flatMap(user -> userSearchRepository.save(user).thenReturn(user))
             .doOnNext(user -> log.debug("Activated user: {}", user));
     }
 
@@ -149,7 +139,6 @@ public class UserService {
                     .thenReturn(newUser)
                     .doOnNext(user -> user.setAuthorities(authorities))
                     .flatMap(this::saveUser)
-                    .flatMap(user -> userSearchRepository.save(user).thenReturn(user))
                     .doOnNext(user -> log.debug("Created Information for User: {}", user));
             });
     }
@@ -184,7 +173,6 @@ public class UserService {
                 return newUser;
             })
             .flatMap(this::saveUser)
-            .flatMap(user1 -> userSearchRepository.save(user1).thenReturn(user1))
             .doOnNext(user1 -> log.debug("Created Information for User: {}", user1));
     }
 
@@ -218,7 +206,6 @@ public class UserService {
                     .then(Mono.just(user));
             })
             .flatMap(this::saveUser)
-            .flatMap(user -> userSearchRepository.save(user).thenReturn(user))
             .doOnNext(user -> log.debug("Changed Information for User: {}", user))
             .map(AdminUserDTO::new);
     }
@@ -228,7 +215,6 @@ public class UserService {
         return userRepository
             .findOneByLogin(login)
             .flatMap(user -> userRepository.delete(user).thenReturn(user))
-            .flatMap(user -> userSearchRepository.delete(user).thenReturn(user))
             .doOnNext(user -> log.debug("Deleted User: {}", user))
             .then();
     }
@@ -258,7 +244,6 @@ public class UserService {
                 user.setImageUrl(imageUrl);
                 return saveUser(user);
             })
-            .flatMap(user -> userSearchRepository.save(user).thenReturn(user))
             .doOnNext(user -> log.debug("Changed Information for User: {}", user))
             .then();
     }
@@ -348,7 +333,6 @@ public class UserService {
                 LocalDateTime.ofInstant(Instant.now().minus(3, ChronoUnit.DAYS), ZoneOffset.UTC)
             )
             .flatMap(user -> userRepository.delete(user).thenReturn(user))
-            .flatMap(user -> userSearchRepository.delete(user).thenReturn(user))
             .doOnNext(user -> log.debug("Deleted User: {}", user));
     }
 

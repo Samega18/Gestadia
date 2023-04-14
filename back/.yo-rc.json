@@ -10,63 +10,40 @@
     "clientPackageManager": "npm",
     "clientTheme": "none",
     "clientThemeVariant": "",
-    "creationTimestamp": 1681341841295,
-    "cypressAudit": true,
-    "cypressCoverage": null,
+    "creationTimestamp": 1681432268284,
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
     "devServerPort": 9060,
     "dtoSuffix": "DTO",
     "enableGradleEnterprise": false,
     "enableHibernateCache": false,
-    "enableSwaggerCodegen": true,
+    "enableSwaggerCodegen": false,
     "enableTranslation": true,
     "entitySuffix": "",
     "jhiPrefix": "jhi",
     "jhipsterVersion": "7.9.3",
-    "jwtSecretKey": "OGNmMjFjNDM0YzY4ZjBkM2FhZWUzZWI2ZjZmOGU0MGRhNzBkMGQ0YzE1ZWIxYzY1ZDAxNzVlM2RiM2YxMGMyZGRiMDg1NjMzNTkzN2EyZGU5ZjU0Yzc3Yzg2NmQ4Njk3N2FmZDdhNTE1MDIwYjM0NTczYjliM2MzYzZkNDM1YTY=",
+    "jwtSecretKey": "NDY0ZGIxZTA3OTNiMWVjZGViN2Q0YmU0MWVjMWY5YmE4N2RjZjk2MjM5YTdhNmQzMWI1YzRmMTllNDA4YTM2YTJiOWE3YzY5ZjcyZTg0OGNhYWI0MGZjNjA1YjA5YWEyN2E0OTkyZWZkNWYzYWVlZWQzYTIzNGUwNDQ0NGNlZmM=",
     "languages": ["pt-br", "en"],
-    "messageBroker": "kafka",
+    "messageBroker": false,
     "microfrontend": false,
     "microfrontends": [],
     "monorepository": true,
     "nativeLanguage": "pt-br",
-    "otherModules": [
-      {
-        "name": "generator-jhipster-es-entity-reindexer",
-        "version": "1.0.1"
-      },
-      {
-        "name": "generator-jhipster-postgres-uuid",
-        "version": "0.0.6"
-      },
-      {
-        "name": "generator-jhipster-gql",
-        "version": "0.1.2"
-      },
-      {
-        "name": "generator-jhipster-kafka",
-        "version": "1.0.1"
-      },
-      {
-        "name": "generator-jhipster-aiggenerator",
-        "version": "0.0.1"
-      }
-    ],
+    "otherModules": [],
     "packageName": "com.milos.gestadia",
     "pages": [],
     "prodDatabaseType": "mysql",
     "reactive": true,
-    "searchEngine": "elasticsearch",
+    "searchEngine": false,
     "serverPort": "8080",
-    "serverSideOptions": ["searchEngine:elasticsearch", "messageBroker:kafka", "enableSwaggerCodegen:true"],
+    "serverSideOptions": [],
     "serviceDiscoveryType": "eureka",
     "skipCheckLengthOfIdentifier": false,
     "skipClient": false,
     "skipCommitHook": true,
     "skipFakeData": false,
     "skipUserManagement": false,
-    "testFrameworks": ["cypress"],
+    "testFrameworks": [],
     "websocket": false,
     "withAdminUi": true
   }

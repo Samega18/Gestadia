@@ -50,9 +50,6 @@ spring:
       profile: prod
       label: main # toggle to switch to a different version of the configuration as stored in git
       # it can be set to any label, branch or commit of the configuration source Git repository
-  data:
-  elasticsearch:
-    uris: http://localhost:9200
   # Replace by 'prod, faker' to add the faker context and have sample data loaded in production
   liquibase:
     contexts: prod
@@ -130,7 +127,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: OGNmMjFjNDM0YzY4ZjBkM2FhZWUzZWI2ZjZmOGU0MGRhNzBkMGQ0YzE1ZWIxYzY1ZDAxNzVlM2RiM2YxMGMyZGRiMDg1NjMzNTkzN2EyZGU5ZjU0Yzc3Yzg2NmQ4Njk3N2FmZDdhNTE1MDIwYjM0NTczYjliM2MzYzZkNDM1YTY=
+        base64-secret: NDY0ZGIxZTA3OTNiMWVjZGViN2Q0YmU0MWVjMWY5YmE4N2RjZjk2MjM5YTdhNmQzMWI1YzRmMTllNDA4YTM2YTJiOWE3YzY5ZjcyZTg0OGNhYWI0MGZjNjA1YjA5YWEyN2E0OTkyZWZkNWYzYWVlZWQzYTIzNGUwNDQ0NGNlZmM=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

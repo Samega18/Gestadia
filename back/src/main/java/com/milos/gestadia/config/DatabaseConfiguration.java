@@ -23,7 +23,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.data.convert.CustomConversions;
 import org.springframework.data.convert.ReadingConverter;
 import org.springframework.data.convert.WritingConverter;
-import org.springframework.data.elasticsearch.repository.config.EnableReactiveElasticsearchRepositories;
 import org.springframework.data.r2dbc.convert.MappingR2dbcConverter;
 import org.springframework.data.r2dbc.convert.R2dbcCustomConversions;
 import org.springframework.data.r2dbc.core.ReactiveDataAccessStrategy;
@@ -40,7 +39,6 @@ import tech.jhipster.config.h2.H2ConfigurationHelper;
 @Configuration
 @EnableR2dbcRepositories({ "com.milos.gestadia.repository" })
 @EnableTransactionManagement
-@EnableReactiveElasticsearchRepositories("com.milos.gestadia.repository.search")
 public class DatabaseConfiguration {
 
     private final Logger log = LoggerFactory.getLogger(DatabaseConfiguration.class);
