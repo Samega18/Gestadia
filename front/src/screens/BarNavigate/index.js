@@ -17,6 +17,7 @@ import IconFW from '@expo/vector-icons/Ionicons';
 
 import Home from '../Home';
 import Profile from '../Profile';
+import Records from '../Records';
 
 const IconBar = ({iconName, label, colorPrimary, colorSecundary, colorTerciary, sizeBar, sizeBar2, selected, valueSelect, change}) =>{
 
@@ -62,7 +63,7 @@ function BarNavigate({ navigation }){
         <StatusBar backgroundColor={colorPrimary} animated={true}/>
         <View style={[ styles.screen, { backgroundColor: colorSecundary }]}>
           {screenSelected == 0 && <Home/>}
-          {screenSelected == 1 && <Text>Tela 2</Text>}
+          {screenSelected == 1 && <Records/>}
           {screenSelected == 2 && <Profile/>}
 
         </View>

@@ -89,7 +89,7 @@ buttonContainer: {
   },
   buttonText: {
     textAlign: 'center',
-    color: '#FFF',
+    color: 'black',
     fontSize: 16,
     fontWeight: '600',
     lineHeight: 17,
