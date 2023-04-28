@@ -11,53 +11,101 @@ container: {
     alignItems: 'center',
 },
 
-containerTop: {
-    flex: 8,
-    width: "100%",
-    height: "100%",
-    justifyContent: 'center',
-    alignItems: 'center',
-},
-
 homeTop: {
-    flex: 1,
+    flex: 1.2,
     width: "100%",
     height: "100%",
-    justifyContent: 'space-around',
+    justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
+    paddingRight: 24,
+    paddingLeft: 24,
+    //backgroundColor: 'red',
 },
 
-topImage: {
-    width: 50,
-    height: 50,
+imageTop: {
+    width: 60,
+    height: 60,
     borderRadius: 200,
     resizeMode: 'contain',
-    borderWidth: 1,
+    borderWidth: 3,
+    borderColor: '#A78BFA',
 },
 
 homeMid: {
-    flex: 7,
+    flex: 4,
     width: "100%",
     height: "100%",
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    //backgroundColor: 'blue',
+},
+
+textContainerMid: {
+    width: '90%',
+    paddingTop: 0,
+    padding: 16,
+},
+
+textMid: {
+    fontSize: 20,
+    fontWeight: 700,
+},
+
+textMid2: {
+    fontSize: 14,
+    fontWeight: 700,
+},
+
+graphicContainerMid: {
+    width: '80%',
+    height: 'auto',
+},
+
+imageMid: {
+    width: '90%',
+    height: '70%',
+    resizeMode: 'stretch',
 },
 
 homeBottom: {
-    flex: 2,
+    flex: 5,
     width: "100%",
     height: "100%",
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     alignItems: 'center',
+    marginBottom: 0,
+    gap: 18,
+    //backgroundColor: 'red',
 },
 
-containerBottom: {
-    flex: 1,
-    width: "100%",
-    height: "100%",
-    justifyContent: 'center',
+bottomContainer2: {
+    flexDirection: 'row',
+    width: '100%',
+    height: '45%',
     alignItems: 'center',
-}
+    justifyContent: 'space-evenly',
+    paddingRight: 12,
+    paddingLeft: 12,
+},
+
+buttonBottomContainer: {
+    width: 170,
+    height: 170,
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    backgroundColor: '#DDD6FE',
+    borderRadius: 8,
+    padding: 14,
+    borderColor: '#A78BFA',
+    borderWidth: 2,
+},
+
+buttonText: {
+    textAlign: 'center',
+    color: '#1E1E1E',
+    fontSize: 16,
+    fontWeight: 600,
+},
 
 });

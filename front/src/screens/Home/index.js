@@ -9,8 +9,25 @@ import {
   Image,
   View,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
+
+import IconFW from '@expo/vector-icons/Ionicons';
+
+import ImgProfile from '../../../assets/user/user_image.png';
+import GraphicHome from '../../../assets/home/graphic_home2.png';
+
+const ButtonBot = ({label, nameIcon}) =>{
+    return(
+        <TouchableOpacity>
+            <View style={styles.buttonBottomContainer}>
+                <Text style={styles.buttonText}>{label}</Text>
+                <IconFW name={nameIcon} size={58} color={'black'}/>
+            </View>
+        </TouchableOpacity>
+    )
+}
 
 function Home(){
 
@@ -24,19 +41,31 @@ function Home(){
 
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
-            <View style={styles.containerTop}>
-                <View style={styles.homeTop}>
-
-                </View>
-                <View style={styles.homeMid}>
-                    <Text style={{color: 'black'}}>Home</Text>
-                </View>
-                <View style={styles.homeBottom}>
-
-                </View>
+            <View style={styles.homeTop}>
+                <TouchableWithoutFeedback>
+                    <IconFW name={'notifications-outline'} size={42} color={'#7C3AED'}/>
+                </TouchableWithoutFeedback>
+                <Image source={ImgProfile} style={styles.imageTop}/>
             </View>
-            <View style={styles.containerBottom}>
-                
+            <View style={styles.homeMid}>
+                <View style={styles.textContainerMid}>
+                    <Text style={styles.textMid}>Ola! Genivalda pereira</Text>
+                    <Text style={styles.textMid2}>É um otimo dia para se cuidar</Text>
+                </View>
+                <Image source={GraphicHome} style={styles.imageMid}/>
+                {/* <View style={styles.graphicContainerMid}>
+                    <Image source={GraphicHome} style={styles.imageMid}/>
+                </View> */}
+            </View>
+            <View style={styles.homeBottom}>
+                <View style={styles.bottomContainer2}>
+                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone'/>
+                    <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle'/>
+                </View>
+                <View style={styles.bottomContainer2}>
+                    <ButtonBot label='Dicas nutricionais' nameIcon='ios-restaurant'/>
+                    <ButtonBot label='Dicas de atividades físicas' nameIcon='md-barbell'/>
+                </View>
             </View>
         </View>
     )
