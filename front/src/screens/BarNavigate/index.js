@@ -59,23 +59,25 @@ function BarNavigate({ navigation }){
     }
 
     return (
-      <View style={[ styles.container, { backgroundColor: colorSecundary }]}>
-        <StatusBar backgroundColor={colorPrimary} animated={true}/>
-        <View style={[ styles.screen, { backgroundColor: colorSecundary }]}>
-          {screenSelected == 0 && <Home/>}
-          {screenSelected == 1 && <Records/>}
-          {screenSelected == 2 && <Profile/>}
+      <SafeAreaView style={{flex: 1,}}>
+        <View style={[ styles.container, { backgroundColor: colorSecundary }]}>
+          <StatusBar backgroundColor={colorPrimary} animated={true}/>
+          <View style={[ styles.screen, { backgroundColor: colorSecundary }]}>
+            {screenSelected == 0 && <Home/>}
+            {screenSelected == 1 && <Records/>}
+            {screenSelected == 2 && <Profile/>}
 
+          </View>
+          <View style={[ styles.barNavigateContainer, { backgroundColor: colorSecundary, borderColor: "#A78BFA"}]}>
+            <IconBar iconName="home" label="Início" sizeBar={32} colorPrimary="black" change={() =>changeScreen(0)}
+              colorSecundary={colorPrimary} selected={screenSelected} valueSelect={0} sizeBar2={42} colorTerciary={colorTerciary}/>
+            <IconBar iconName="clipboard" label="Registros" sizeBar={32} colorPrimary="black" change={() => changeScreen(1)}
+              colorSecundary={colorPrimary} selected={screenSelected} valueSelect={1} sizeBar2={42} colorTerciary={colorTerciary}/>
+            <IconBar iconName="person" label="Perfil" sizeBar={32} colorPrimary="black" change={() => changeScreen(2)}
+              colorSecundary={colorPrimary} selected={screenSelected} valueSelect={2} sizeBar2={42} colorTerciary={colorTerciary}/>
+          </View>
         </View>
-        <View style={[ styles.barNavigateContainer, { backgroundColor: colorSecundary, borderColor: "#A78BFA"}]}>
-          <IconBar iconName="home" label="Início" sizeBar={32} colorPrimary="black" change={() =>changeScreen(0)}
-            colorSecundary={colorPrimary} selected={screenSelected} valueSelect={0} sizeBar2={42} colorTerciary={colorTerciary}/>
-          <IconBar iconName="clipboard" label="Registros" sizeBar={32} colorPrimary="black" change={() => changeScreen(1)}
-            colorSecundary={colorPrimary} selected={screenSelected} valueSelect={1} sizeBar2={42} colorTerciary={colorTerciary}/>
-          <IconBar iconName="person" label="Perfil" sizeBar={32} colorPrimary="black" change={() => changeScreen(2)}
-            colorSecundary={colorPrimary} selected={screenSelected} valueSelect={2} sizeBar2={42} colorTerciary={colorTerciary}/>
-        </View>
-      </View>
+      </SafeAreaView>
     );
   };
 

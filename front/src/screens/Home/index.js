@@ -9,8 +9,22 @@ import {
   Image,
   View,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from 'react-native';
 import styles from './styles';
+
+import IconFW from '@expo/vector-icons/Ionicons';
+
+const ButtonBot = ({label, nameIcon}) =>{
+    return(
+        <TouchableOpacity>
+            <View style={styles.buttonBottomContainer}>
+                <Text style={styles.buttonText}>{label}</Text>
+                <IconFW name={nameIcon} size={58} color={'black'}/>
+            </View>
+        </TouchableOpacity>
+    )
+}
 
 function Home(){
 
@@ -24,19 +38,21 @@ function Home(){
 
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
-            <View style={styles.containerTop}>
-                <View style={styles.homeTop}>
+            <View style={styles.homeTop}>
 
-                </View>
-                <View style={styles.homeMid}>
-                    <Text style={{color: 'black'}}>Home</Text>
-                </View>
-                <View style={styles.homeBottom}>
-
-                </View>
             </View>
-            <View style={styles.containerBottom}>
-                
+            <View style={styles.homeMid}>
+                <Text style={{color: 'black'}}>Home</Text>
+            </View>
+            <View style={styles.homeBottom}>
+                <View style={styles.bottomContainer2}>
+                    <ButtonBot label='Lembretes' nameIcon='notifications'/>
+                    <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle'/>
+                </View>
+                <View style={styles.bottomContainer2}>
+                    <ButtonBot label='Dicas nutricionais' nameIcon='ios-restaurant'/>
+                    <ButtonBot label='Dicas de atividades físicas' nameIcon='md-barbell'/>
+                </View>
             </View>
         </View>
     )

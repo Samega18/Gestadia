@@ -32,7 +32,7 @@ function Records(){
     const colorSecundary = "#F5F5F5";
 
     return(
-        <SafeAreaView style={[styles.container, {backgroundColor: colorSecundary}]}>
+        <View style={[styles.container, {backgroundColor: colorSecundary}]}>
             <View style={styles.recordsTop}>
                 <View style={styles.topInfoContainer}>
 
@@ -45,18 +45,18 @@ function Records(){
                 <Item name={'Registo de dados sobre glicemia'}/>
             </View>
             <View style={styles.recordsBottom}>
-                <View style={styles.bottomBalls}>
+                {/* <View style={styles.bottomBalls}>
                     <View style={styles.itemElipse}/>
                     <View style={styles.itemElipse}/>
                     <View style={styles.itemElipse}/>
                     <View style={styles.itemElipse}/>
                     <View style={styles.itemElipse2}/>
-                </View>
+                </View> */}
                 <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
                     <Text style={styles.buttonText}>Enviar respostas</Text>
                 </TouchableOpacity>
             </View>
-        </SafeAreaView>
+        </View>
     )
 }
 

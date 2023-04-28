@@ -4,10 +4,7 @@ import Routes from './src/screens/Routes';
 
 export default function App() {
   return (
-      <>
-        <StatusBar style="auto"/>
-        <Routes/>
-      </>
+    <Routes/>
   );
 }
 
