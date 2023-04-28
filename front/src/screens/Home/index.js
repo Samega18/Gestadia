@@ -15,6 +15,9 @@ import styles from './styles';
 
 import IconFW from '@expo/vector-icons/Ionicons';
 
+import ImgProfile from '../../../assets/user/user_image.png';
+import GraphicHome from '../../../assets/home/graphic_home2.png';
+
 const ButtonBot = ({label, nameIcon}) =>{
     return(
         <TouchableOpacity>
@@ -39,14 +42,24 @@ function Home(){
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
             <View style={styles.homeTop}>
-
+                <TouchableWithoutFeedback>
+                    <IconFW name={'notifications-outline'} size={42} color={'#7C3AED'}/>
+                </TouchableWithoutFeedback>
+                <Image source={ImgProfile} style={styles.imageTop}/>
             </View>
             <View style={styles.homeMid}>
-                <Text style={{color: 'black'}}>Home</Text>
+                <View style={styles.textContainerMid}>
+                    <Text style={styles.textMid}>Ola! Genivalda pereira</Text>
+                    <Text style={styles.textMid2}>É um otimo dia para se cuidar</Text>
+                </View>
+                <Image source={GraphicHome} style={styles.imageMid}/>
+                {/* <View style={styles.graphicContainerMid}>
+                    <Image source={GraphicHome} style={styles.imageMid}/>
+                </View> */}
             </View>
             <View style={styles.homeBottom}>
                 <View style={styles.bottomContainer2}>
-                    <ButtonBot label='Lembretes' nameIcon='notifications'/>
+                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone'/>
                     <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle'/>
                 </View>
                 <View style={styles.bottomContainer2}>
