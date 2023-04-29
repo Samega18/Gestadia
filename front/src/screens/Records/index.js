@@ -2,23 +2,47 @@ import React,{ Component, useState, useEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import {
   SafeAreaView,
+  Image,
   Text,
   TouchableOpacity,
   View,
+  TouchableWithoutFeedback,
 } from 'react-native';
 import styles from './styles';
 
-const Item = ({name, route}) =>{
+import ImgProfile from '../../../assets/user/user_image.png';
 
+import IconFW from '@expo/vector-icons/Ionicons';
+import IconMC from '@expo/vector-icons/MaterialCommunityIcons';
+
+const InfoItem = ({type, label, styled}) =>{
     return(
-        <View style={styles.itemContainer}>
-            <View style={styles.itemElipse}/>
-            <Text style={styles.itemText}>
-                {name}
-            </Text>    
+        <View style={[styles.infoItem, styled]}>
+            <Text style={styles.infoItemText}>{label}</Text>
         </View>
     )
+}
 
+const ButtonBot = ({label, nameIcon}) =>{
+    return(
+        <TouchableOpacity>
+            <View style={styles.buttonMidContainer}>
+                <Text style={styles.buttonText}>{label}</Text>
+                <IconFW name={nameIcon} size={58} color={'black'}/>
+            </View>
+        </TouchableOpacity>
+    )
+}
+
+const ButtonBot2 = ({label, nameIcon}) =>{
+    return(
+        <TouchableOpacity>
+            <View style={styles.buttonMidContainer}>
+                <Text style={styles.buttonText}>{label}</Text>
+                <IconMC name={nameIcon} size={58} color={'black'}/>
+            </View>
+        </TouchableOpacity>
+    )
 }
 
 function Records(){
@@ -33,25 +57,32 @@ function Records(){
 
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
-            <View style={styles.recordsTop}>
+            <View style={styles.homeTop}>
                 <View style={styles.topInfoContainer}>
-
+                    <View style={styles.topInfoContainer2}>
+                        <InfoItem label='glicemia: 129.0 mg/dL' styled={{borderTopLeftRadius: 4}} />
+                        <InfoItem label='Frequencia: 86%' styled={{borderTopRightRadius: 4}}/>
+                    </View>
+                    <View style={styles.topInfoContainer2}>
+                        <InfoItem label='Peso: 80.0 kg' styled={{borderBottomLeftRadius: 4}}/>
+                        <InfoItem label='Atividade não respondida' styled={{borderBottomRightRadius: 4}}/>
+                    </View>
                 </View>
             </View>
-            <View style={styles.recordsMid}>
-                <Item name={'Registro de Atividades Física'}/>
-                <Item name={'Registo de Alimentação'}/>
-                <Item name={'Registro de dados sobre peso'}/>
-                <Item name={'Registo de dados sobre glicemia'}/>
+            <View style={styles.homeMid}>
+                <View style={styles.midTextContainer}>
+                    <Text style={styles.midText}>Registros</Text>
+                </View>
+                <View style={styles.midContainer2}>
+                    <ButtonBot label='Registro de Atividades física' nameIcon='md-barbell'/>
+                    <ButtonBot label='Registro de Alimentação' nameIcon='ios-restaurant'/>
+                </View>
+                <View style={styles.midContainer2}>
+                    <ButtonBot2 label='Registro peso atual' nameIcon='scale'/>
+                    <ButtonBot label='Registo da glicemia' nameIcon='md-water'/>
+                </View>
             </View>
-            <View style={styles.recordsBottom}>
-                {/* <View style={styles.bottomBalls}>
-                    <View style={styles.itemElipse}/>
-                    <View style={styles.itemElipse}/>
-                    <View style={styles.itemElipse}/>
-                    <View style={styles.itemElipse}/>
-                    <View style={styles.itemElipse2}/>
-                </View> */}
+            <View style={styles.homeBottom}>
                 <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
                     <Text style={styles.buttonText}>Enviar respostas</Text>
                 </TouchableOpacity>
