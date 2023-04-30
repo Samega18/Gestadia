@@ -62,9 +62,9 @@ function Profile(){
                <Option iconName={'location-outline'} iconColor={"#7C3AED"} label={"Endereços"} screenNav={'UserAddress'}/>
                <Option iconName={'clipboard-outline'} iconColor={"#7C3AED"} label={"Prontuário Eletrônico"} screenNav={'UserPEP'}/>
                <View style={styles.spaceOptions}></View>
-               <Option iconName={'md-settings-outline'} iconColor={"#7C3AED"} label={"Configurações"} screenNav={'UserProfile'}/>
-               <Option iconName={'md-help-circle-outline'} iconColor={"#7C3AED"} label={"Ajuda"} screenNav={'UserProfile'}/>
-               <Option iconName={'md-information-circle-outline'} iconColor={"#7C3AED"} label={"Sobre"} screenNav={'UserProfile'}/>
+               <Option iconName={'md-settings-outline'} iconColor={"#7C3AED"} label={"Configurações"} screenNav={'UserConfig'}/>
+               <Option iconName={'md-help-circle-outline'} iconColor={"#7C3AED"} label={"Ajuda"} screenNav={'UserHelp'}/>
+               <Option iconName={'md-information-circle-outline'} iconColor={"#7C3AED"} label={"Sobre"} screenNav={'UserAbout'}/>
             </View>
             <View style={styles.containerBottom}>
                 <TouchableOpacity style={styles.buttonContainer} onPress={handleQuit}>
