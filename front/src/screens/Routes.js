@@ -14,6 +14,9 @@ import UserAddress from './ProfileScreens/UserAddress';
 import UserPEP from './ProfileScreens/UserPEP';
 import UserHelp from './ProfileScreens/UserHelp';
 import UserAbout from './ProfileScreens/UserAbout';
+import UserConfig from './ProfileScreens/UserConfig';
+import AddressAdd from './ProfileScreens/UserAddress/Add';
+import AddressEdit from './ProfileScreens/UserAddress/Edit';
 
 //import BarNavigate from './BarNavigate';
 
@@ -45,9 +48,11 @@ function Routes(){
           <Stack.Screen name="UserProfile" component={UserProfile}/>
           <Stack.Screen name="UserAccount" component={UserAccount}/>
           <Stack.Screen name="UserAddress" component={UserAddress}/>
+            <Stack.Screen name="AddressAdd" component={AddressAdd}/>
+            <Stack.Screen name="AddressEdit" component={AddressEdit}/>
           <Stack.Screen name="UserPEP" component={UserPEP}/>
 
-          <Stack.Screen name="UserConfig" component={UserPEP}/>
+          <Stack.Screen name="UserConfig" component={UserConfig}/>
           <Stack.Screen name="UserHelp" component={UserHelp}/>
           <Stack.Screen name="UserAbout" component={UserAbout}/>
 

@@ -43,8 +43,8 @@ const Address = ({nome, rua, bairro, numero}) =>{
 
     const navigation = useNavigation();
 
-    const handlePress = () =>{
-        navigation.navigate(screenNav);
+    const handleEditPress = () =>{
+        navigation.navigate('AddressEdit');
     }
 
     return(
@@ -58,7 +58,7 @@ const Address = ({nome, rua, bairro, numero}) =>{
             </View>
             <View style={styles.addressButtonsContainer}>
                 {/* <IconFW name={iconName} size={32} color={iconColor}/> */}
-                <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
+                <TouchableOpacity style={styles.buttonContainer} onPress={handleEditPress}>
                         <Text style={styles.buttonText}>Alterar</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
@@ -87,7 +87,7 @@ function UserAddress(){
             </View>
             <ScrollView style={styles.userAddressScroll}>
                 <View style={styles.userAddressAddContainer}>
-                    <Option label={'Adicionar endereço'}/>
+                    <Option label={'Adicionar endereço'} screenNav={'AddressAdd'}/>
                 </View>
                 <View style={styles.userAddressForms}>
                     <Address nome={'Casa'} rua={'Rua 1'} bairro={'Bairro 1'} numero={'123'}/>

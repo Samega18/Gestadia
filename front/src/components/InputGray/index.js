@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
-export default function InputGray({label, valueComponent, active}) {
+export default function InputGray({label, valueComponent, placeholder}) {
 
     const [value, setValue] = useState('');
 
@@ -15,8 +15,8 @@ export default function InputGray({label, valueComponent, active}) {
             <TextInput
             readOnly={false}
             style={styles.input}
-            placeholder=""
-            placeholderTextColor="#A78BFA"
+            placeholder={placeholder}
+            placeholderTextColor="gray"
             autoCapitalize="none"
             autoCorrect={false}
             value={value}
