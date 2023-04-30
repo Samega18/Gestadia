@@ -86,13 +86,13 @@ buttonContainer: {
     height: 46,
     backgroundColor: '#A78BFA',
     borderRadius: 8,
-  },
-  buttonText: {
+},
+buttonText: {
     textAlign: 'center',
     color: 'black',
     fontSize: 16,
     fontWeight: '600',
     lineHeight: 17,
-  },
+},
 
 });

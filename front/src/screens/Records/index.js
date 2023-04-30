@@ -57,7 +57,7 @@ function Records(){
 
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
-            <View style={styles.homeTop}>
+            <View style={styles.userProfileTop}>
                 <View style={styles.topInfoContainer}>
                     <View style={styles.topInfoContainer2}>
                         <InfoItem label='glicemia: 129.0 mg/dL' styled={{borderTopLeftRadius: 4}} />
@@ -69,7 +69,7 @@ function Records(){
                     </View>
                 </View>
             </View>
-            <View style={styles.homeMid}>
+            <View style={styles.userProfileMid}>
                 <View style={styles.midTextContainer}>
                     <Text style={styles.midText}>Registros</Text>
                 </View>
@@ -82,7 +82,7 @@ function Records(){
                     <ButtonBot label='Registo da glicemia' nameIcon='md-water'/>
                 </View>
             </View>
-            <View style={styles.homeBottom}>
+            <View style={styles.userProfileBottom}>
                 <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
                     <Text style={styles.buttonText}>Enviar respostas</Text>
                 </TouchableOpacity>

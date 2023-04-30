@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -25,7 +25,7 @@ const RegisterScreen = ({ navigation }) => {
   }
 
   return (
-    <KeyboardAvoidingView behavior="height" style={styles.container}>
+    <ScrollView /*behavior="height"*/ style={styles.container}>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>Cadastrar</Text>
       </View>
@@ -125,7 +125,7 @@ const RegisterScreen = ({ navigation }) => {
             </TouchableOpacity>
         </View>
       </View>
-    </KeyboardAvoidingView>
+    </ScrollView>
   );
 };
 
@@ -136,6 +136,8 @@ const styles = StyleSheet.create({
   },
   headerContainer: {
     flex: 1,
+    width: '100%',
+    height: 100,
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -149,7 +151,7 @@ const styles = StyleSheet.create({
     opacity: 0.9
   },
   formContainer: {
-    flex: 4,
+    flex: 6,
     alignItems: 'center',
     justifyContent: 'flex-start',
     gap: 12,

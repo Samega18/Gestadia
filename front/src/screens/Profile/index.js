@@ -20,7 +20,7 @@ const Option = ({iconName, iconColor, label, screenNav}) =>{
     const navigation = useNavigation();
 
     const handlePress = () =>{
-        //navigation.navigate(screenNav);
+        navigation.navigate(screenNav);
     }
 
     return(
@@ -57,14 +57,14 @@ function Profile(){
                <Text style={styles.topName}>Genivalda Pereira</Text>
             </View>
             <View style={styles.containerMid}>
-               <Option iconName={'person-outline'} iconColor={"#7C3AED"} label={"Perfil de Usuário"}/>
-               <Option iconName={'list-outline'} iconColor={"#7C3AED"} label={"Conta de Usuário"}/>
-               <Option iconName={'location-outline'} iconColor={"#7C3AED"} label={"Endereços"}/>
-               <Option iconName={'clipboard-outline'} iconColor={"#7C3AED"} label={"Prontuário Eletrônico"}/>
+               <Option iconName={'person-outline'} iconColor={"#7C3AED"} label={"Perfil de Usuário"} screenNav={'UserProfile'}/>
+               <Option iconName={'list-outline'} iconColor={"#7C3AED"} label={"Conta de Usuário"} screenNav={'UserAccount'}/>
+               <Option iconName={'location-outline'} iconColor={"#7C3AED"} label={"Endereços"} screenNav={'UserAddress'}/>
+               <Option iconName={'clipboard-outline'} iconColor={"#7C3AED"} label={"Prontuário Eletrônico"} screenNav={'UserPEP'}/>
                <View style={styles.spaceOptions}></View>
-               <Option iconName={'md-settings-outline'} iconColor={"#7C3AED"} label={"Configurações"}/>
-               <Option iconName={'md-help-circle-outline'} iconColor={"#7C3AED"} label={"Ajuda"}/>
-               <Option iconName={'md-information-circle-outline'} iconColor={"#7C3AED"} label={"Sobre"}/>
+               <Option iconName={'md-settings-outline'} iconColor={"#7C3AED"} label={"Configurações"} screenNav={'UserConfig'}/>
+               <Option iconName={'md-help-circle-outline'} iconColor={"#7C3AED"} label={"Ajuda"} screenNav={'UserHelp'}/>
+               <Option iconName={'md-information-circle-outline'} iconColor={"#7C3AED"} label={"Sobre"} screenNav={'UserAbout'}/>
             </View>
             <View style={styles.containerBottom}>
                 <TouchableOpacity style={styles.buttonContainer} onPress={handleQuit}>
