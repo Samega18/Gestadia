@@ -8,6 +8,8 @@ import RegisterScreen from './Initial/Register';
 import ForgotScreen from './Initial/Forgot';
 import Forgot2Screen from './Initial/Forgot2';
 import BarNavigate from './BarNavigate';
+import UserProfile from './ProfileScreens/UserProfile';
+import UserAccount from './ProfileScreens/UserAccount';
 
 //import BarNavigate from './BarNavigate';
 
@@ -33,6 +35,11 @@ function Routes(){
           {/* <Stack.Screen name="BarNavigate" component={BarNavigate}/> */}
 
           {/* Home */}
+
+          {/* Profile */}
+
+          <Stack.Screen name="UserProfile" component={UserProfile}/>
+          <Stack.Screen name="UserAccount" component={UserAccount}/>
 
         </Stack.Navigator>
       </NavigationContainer>

@@ -11,7 +11,7 @@ container: {
     alignItems: 'center',
 },
 
-homeTop: {
+userProfileTop: {
     flex: 3,
     width: "100%",
     height: "100%",
@@ -58,7 +58,7 @@ infoItemText: {
     color: 'black',
 },
 
-homeMid: {
+userProfileMid: {
     flex: 5,
     width: "100%",
     height: "100%",
@@ -115,7 +115,7 @@ buttonText: {
     fontWeight: 600,
 },
 
-homeBottom: {
+userProfileBottom: {
     flex: 1,
     width: "100%",
     height: "100%",
