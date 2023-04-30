@@ -45,7 +45,9 @@ function Home(){
                 <TouchableWithoutFeedback>
                     <IconFW name={'notifications-outline'} size={42} color={'#7C3AED'}/>
                 </TouchableWithoutFeedback>
-                <Image source={ImgProfile} style={styles.imageTop}/>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('UserProfile')}>
+                    <Image source={ImgProfile} style={styles.imageTop}/>
+                </TouchableWithoutFeedback>
             </View>
             <View style={styles.homeMid}>
                 <View style={styles.textContainerMid}>

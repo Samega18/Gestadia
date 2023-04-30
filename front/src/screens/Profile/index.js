@@ -59,8 +59,8 @@ function Profile(){
             <View style={styles.containerMid}>
                <Option iconName={'person-outline'} iconColor={"#7C3AED"} label={"Perfil de Usuário"} screenNav={'UserProfile'}/>
                <Option iconName={'list-outline'} iconColor={"#7C3AED"} label={"Conta de Usuário"} screenNav={'UserAccount'}/>
-               <Option iconName={'location-outline'} iconColor={"#7C3AED"} label={"Endereços"} screenNav={'UserProfile'}/>
-               <Option iconName={'clipboard-outline'} iconColor={"#7C3AED"} label={"Prontuário Eletrônico"} screenNav={'UserProfile'}/>
+               <Option iconName={'location-outline'} iconColor={"#7C3AED"} label={"Endereços"} screenNav={'UserAddress'}/>
+               <Option iconName={'clipboard-outline'} iconColor={"#7C3AED"} label={"Prontuário Eletrônico"} screenNav={'UserPEP'}/>
                <View style={styles.spaceOptions}></View>
                <Option iconName={'md-settings-outline'} iconColor={"#7C3AED"} label={"Configurações"} screenNav={'UserProfile'}/>
                <Option iconName={'md-help-circle-outline'} iconColor={"#7C3AED"} label={"Ajuda"} screenNav={'UserProfile'}/>

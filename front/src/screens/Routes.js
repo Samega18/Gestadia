@@ -10,6 +10,8 @@ import Forgot2Screen from './Initial/Forgot2';
 import BarNavigate from './BarNavigate';
 import UserProfile from './ProfileScreens/UserProfile';
 import UserAccount from './ProfileScreens/UserAccount';
+import UserAddress from './ProfileScreens/UserAddress';
+import UserPEP from './ProfileScreens/UserPEP';
 
 //import BarNavigate from './BarNavigate';
 
@@ -40,6 +42,8 @@ function Routes(){
 
           <Stack.Screen name="UserProfile" component={UserProfile}/>
           <Stack.Screen name="UserAccount" component={UserAccount}/>
+          <Stack.Screen name="UserAddress" component={UserAddress}/>
+          <Stack.Screen name="UserPEP" component={UserPEP}/>
 
         </Stack.Navigator>
       </NavigationContainer>
