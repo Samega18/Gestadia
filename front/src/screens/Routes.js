@@ -19,6 +19,9 @@ import AddressAdd from './ProfileScreens/UserAddress/Add';
 import AddressEdit from './ProfileScreens/UserAddress/Edit';
 import Notifications from './Home/Notifications';
 import Reminders from './Home/Reminders';
+import TipsAll from './Home/TipsAll';
+import TipsFisi from './Home/TipsFisi';
+import TipsNutri from './Home/TipsNutri';
 
 //import BarNavigate from './BarNavigate';
 
@@ -47,6 +50,9 @@ function Routes(){
 
           <Stack.Screen name="Notifications" component={Notifications}/>
           <Stack.Screen name="Reminders" component={Reminders}/>
+          <Stack.Screen name="TipsAll" component={TipsAll}/>
+          <Stack.Screen name="TipsFisi" component={TipsFisi}/>
+          <Stack.Screen name="TipsNutri" component={TipsNutri}/>
 
           {/* Profile */}
 

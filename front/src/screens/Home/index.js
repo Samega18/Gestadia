@@ -65,11 +65,11 @@ function Home(){
             <View style={styles.homeBottom}>
                 <View style={styles.bottomContainer2}>
                     <ButtonBot label='Lembretes' nameIcon='ios-megaphone' screenNav={'Reminders'} />
-                    <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle'/>
+                    <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle' screenNav={'TipsAll'}/>
                 </View>
                 <View style={styles.bottomContainer2}>
-                    <ButtonBot label='Dicas nutricionais' nameIcon='ios-restaurant'/>
-                    <ButtonBot label='Dicas de atividades físicas' nameIcon='md-barbell'/>
+                    <ButtonBot label='Dicas nutricionais' nameIcon='ios-restaurant' screenNav={'TipsNutri'}/>
+                    <ButtonBot label='Dicas de atividades físicas' nameIcon='md-barbell' screenNav={'TipsFisi'}/>
                 </View>
             </View>
         </View>
