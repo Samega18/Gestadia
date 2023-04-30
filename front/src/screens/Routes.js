@@ -17,6 +17,8 @@ import UserAbout from './ProfileScreens/UserAbout';
 import UserConfig from './ProfileScreens/UserConfig';
 import AddressAdd from './ProfileScreens/UserAddress/Add';
 import AddressEdit from './ProfileScreens/UserAddress/Edit';
+import Notifications from './Home/Notifications';
+import Reminders from './Home/Reminders';
 
 //import BarNavigate from './BarNavigate';
 
@@ -42,6 +44,9 @@ function Routes(){
           {/* <Stack.Screen name="BarNavigate" component={BarNavigate}/> */}
 
           {/* Home */}
+
+          <Stack.Screen name="Notifications" component={Notifications}/>
+          <Stack.Screen name="Reminders" component={Reminders}/>
 
           {/* Profile */}
 

@@ -18,9 +18,12 @@ import IconFW from '@expo/vector-icons/Ionicons';
 import ImgProfile from '../../../assets/user/user_image.png';
 import GraphicHome from '../../../assets/home/graphic_home2.png';
 
-const ButtonBot = ({label, nameIcon}) =>{
+const ButtonBot = ({label, nameIcon, screenNav}) =>{
+
+    const navigation = useNavigation();
+
     return(
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate(screenNav)}>
             <View style={styles.buttonBottomContainer}>
                 <Text style={styles.buttonText}>{label}</Text>
                 <IconFW name={nameIcon} size={58} color={'black'}/>
@@ -42,7 +45,7 @@ function Home(){
     return(
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
             <View style={styles.homeTop}>
-                <TouchableWithoutFeedback>
+                <TouchableWithoutFeedback onPress={() => navigation.navigate('Notifications')}>
                     <IconFW name={'notifications-outline'} size={42} color={'#7C3AED'}/>
                 </TouchableWithoutFeedback>
                 <TouchableWithoutFeedback onPress={() => navigation.navigate('UserProfile')}>
@@ -61,7 +64,7 @@ function Home(){
             </View>
             <View style={styles.homeBottom}>
                 <View style={styles.bottomContainer2}>
-                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone'/>
+                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone' screenNav={'Reminders'} />
                     <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle'/>
                 </View>
                 <View style={styles.bottomContainer2}>
