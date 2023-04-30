@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, StatusBar } from 'react-native';
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
@@ -7,12 +7,18 @@ const LoginScreen = ({ navigation }) => {
   const [errorMessage, setErrorMessage] = useState(null);
 
   const handleLogin = () => {
-    navigation.navigate('BarNavigate')
+    setTimeout(() =>{
+      navigation.reset({
+           routes: [{name: 'BarNavigate'}]
+           });
+  }, 100)
+    //navigation.navigate('BarNavigate')
     //firebase.auth().signInWithEmailAndPassword(email, password).catch(error => setErrorMessage(error.message));
   }
 
   return (
     <KeyboardAvoidingView behavior="height" style={styles.container}>
+      <StatusBar backgroundColor={'#A78BFA'} animated={true}/>
       <View style={styles.backgroundImage}>
         <Image source={require('../../../assets/login/login.png')} style={styles.imageFundo} />
       </View>

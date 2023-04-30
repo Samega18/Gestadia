@@ -22,7 +22,7 @@ const Option = ({label, screenNav}) =>{
     const navigation = useNavigation();
 
     const handlePress = () =>{
-        navigation.navigate(screenNav);
+        // navigation.navigate(screenNav);
     }
 
     return(

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, KeyboardAvoidingView, StatusBar } from 'react-native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -14,6 +14,7 @@ const ForgotScreen = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView behavior="height" style={styles.container}>
+      <StatusBar backgroundColor={'#351F4D'} animated={true}/>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>Recuperar Senha</Text>
       </View>

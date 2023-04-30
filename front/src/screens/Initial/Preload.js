@@ -15,7 +15,7 @@ function PreloadScreen(){
     // branco #F5F5F5
     // azul #4e8df3
 
-    const colorPrimary = "#4e8df3";
+    const colorPrimary = "#A78BFA";
     const colorSecundary = "#F5F5F5";
 
     const navigation = useNavigation();

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, ScrollView } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, ScrollView, StatusBar } from 'react-native';
 
 import Ionicons from '@expo/vector-icons/Ionicons';
 
@@ -26,6 +26,7 @@ const RegisterScreen = ({ navigation }) => {
 
   return (
     <ScrollView /*behavior="height"*/ style={styles.container}>
+      <StatusBar backgroundColor={'#351F4D'} animated={true}/>
       <View style={styles.headerContainer}>
         <Text style={styles.title}>Cadastrar</Text>
       </View>

@@ -58,16 +58,19 @@ scrollContainer: {
 
 tipsFisiMid: {
     width: "100%",
-    height: 70,
+    height: 100,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
+    paddingHorizontal: 18,
+    //backgroundColor: 'red',
 },
 
 midText: {
     fontSize: 32,
     fontWeight: 400,
     color: 'black',
+    textAlign: 'center',
 },
 
 tipsFisiOptionsContainer: {
@@ -76,6 +79,7 @@ tipsFisiOptionsContainer: {
     justifyContent: 'flex-start',
     alignItems: 'center',
     gap: 18,
+    marginBottom: 24,
 }
 
 });
