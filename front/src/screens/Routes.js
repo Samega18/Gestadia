@@ -22,6 +22,8 @@ import Reminders from './Home/Reminders';
 import TipsAll from './Home/TipsAll';
 import TipsFisi from './Home/TipsFisi';
 import TipsNutri from './Home/TipsNutri';
+import UserEditProfile from './ProfileScreens/UserProfile/edit';
+import UserEditAccount from './ProfileScreens/UserAccount/edit';
 
 //import BarNavigate from './BarNavigate';
 
@@ -57,7 +59,9 @@ function Routes(){
           {/* Profile */}
 
           <Stack.Screen name="UserProfile" component={UserProfile}/>
+            <Stack.Screen name="UserEditProfile" component={UserEditProfile}/>
           <Stack.Screen name="UserAccount" component={UserAccount}/>
+            <Stack.Screen name="UserEditAccount" component={UserEditAccount}/>
           <Stack.Screen name="UserAddress" component={UserAddress}/>
             <Stack.Screen name="AddressAdd" component={AddressAdd}/>
             <Stack.Screen name="AddressEdit" component={AddressEdit}/>

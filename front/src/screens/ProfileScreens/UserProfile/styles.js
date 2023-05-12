@@ -15,10 +15,11 @@ userProfileTop: {
     flex: 1,
     width: "100%",
     height: "100%",
-    justifyContent: 'flex-start',
+    justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     paddingLeft: 12,
+    paddingRight: 12,
     //backgroundColor: 'red',
 },
 

@@ -1,17 +1,34 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity, Image, KeyboardAvoidingView, StatusBar } from 'react-native';
+import UserService from '../../api/UserService';
+import StorageService from '../../api/StorageService';
 
 const LoginScreen = ({ navigation }) => {
-  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState(null);
 
-  const handleLogin = () => {
+  const handleLogin = async() => {
+
+    if(username == ''){
+      //alert('Coloque seu Username')
+    }else if(password == ''){
+      //alert('Coloque sua senha')
+    }else{
+      const value = await UserService.login(email, password);
+    }
+
+    //alert(email+':'+password);
+
+    //alert('Value: '+value.id_token);
+
+    //alert('Token: '+await StorageService.getToken());
+
     setTimeout(() =>{
       navigation.reset({
            routes: [{name: 'BarNavigate'}]
            });
-  }, 100)
+     }, 100)
     //navigation.navigate('BarNavigate')
     //firebase.auth().signInWithEmailAndPassword(email, password).catch(error => setErrorMessage(error.message));
   }
@@ -32,25 +49,24 @@ const LoginScreen = ({ navigation }) => {
       <View style={styles.formContainer}>
         {errorMessage && <Text style={styles.error}>{errorMessage}</Text>}
         <View style={styles.inputContainer}>
-            <Text style={styles.label}>CPF/Telefone</Text>
+            <Text style={styles.label}>Username</Text>
             <TextInput
             style={styles.input}
-            placeholder="000.000.000-00/(83)9xxxx-xxxx"
+            placeholder="Digite seu login"
             placeholderTextColor="#A78BFA"
-            keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
-            value={email}
-            onChangeText={setEmail}
+            value={username}
+            onChangeText={setUsername}
             />
         </View>
         <View style={styles.inputContainer}>
             <Text style={styles.label}>Senha</Text>
             <TextInput
             style={styles.input}
-            placeholder="Senha"
+            placeholder="Digite sua senha"
             placeholderTextColor="#A78BFA"
-            secureTextEntry
+            secureTextEntry={false}
             autoCapitalize="none"
             autoCorrect={false}
             value={password}

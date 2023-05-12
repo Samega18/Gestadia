@@ -128,7 +128,7 @@ userProfileBottom: {
 buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'center',
-    alignÍtems: 'center',
+    alignItems: 'center',
     padding: 16,
     gap: 10,
     width: 265,
@@ -144,5 +144,43 @@ buttonText: {
     textAlign: 'center',
     color: 'black',
 },
+
+modalRecords: {
+    bottom: 0,
+    left: 0,
+    position: 'absolute',
+    width: '100%',
+    height: 'auto',
+    paddingTop: 12,
+    paddingBottom: 12,
+    gap: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#DDD6FE',
+},
+
+modalRecordsTop: {
+    width: '100%',
+    height: 30,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    //backgroundColor: 'red',
+},
+
+modalRecordsTopText: {
+    fontWeight: 500,
+    fontSize: 15,
+    lineHeight: 19,
+    textAlign: 'center',
+    color: 'black',
+},
+
+modalRecordsMid:{
+    width: '100%',
+    height: 'auto',
+    alignItems: 'center',
+    justifyContent: 'center',
+}
 
 });

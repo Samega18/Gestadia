@@ -127,6 +127,18 @@ export const UserManagementUpdate = () => {
                   validate: v => isEmail(v) || 'E-mail inválido.',
                 }}
               />
+              <ValidatedField
+                type="text"
+                name="langKey"
+                label="Idioma"
+                value='pt-br'
+                validate={{
+                  maxLength: {
+                    value: 10,
+                    message: 'Este campo não pode ter mais de 50 caracteres.',
+                  },
+                }}
+              />
               <ValidatedField type="checkbox" name="activated" check value={true} disabled={!user.id} label="Ativo" />
               <ValidatedField type="select" name="authorities" multiple label="Perfis">
                 {authorities.map(role => (

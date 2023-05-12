@@ -15,6 +15,7 @@ import ImgProfile from '../../../../assets/user/user_image2.png';
 import IconFW from '@expo/vector-icons/Ionicons';
 import IconMC from '@expo/vector-icons/MaterialCommunityIcons';
 import InputGray from '../../../components/InputGray';
+import ViewGray from '../../../components/ViewGray';
 
 function UserProfile(){
 
@@ -30,6 +31,7 @@ function UserProfile(){
         <View style={[styles.container, {backgroundColor: colorSecundary}]}>
             <View style={styles.userProfileTop}>
                 <IconFW name={'arrow-back'} size={42} color={'black'} onPress={() => navigation.goBack()}/>
+                <IconFW name={'create-outline'} size={38} color={'black'} onPress={() => navigation.navigate('UserEditProfile')}/>
             </View>
             <View style={styles.userProfileTop2}>
                 <Text style={styles.title}>Perfil do Usuário</Text>
@@ -39,17 +41,14 @@ function UserProfile(){
                     <Image source={ImgProfile} style={styles.imageMid}/>
                 </View>
                 <View style={styles.midContainer2}>
-                    <TouchableOpacity style={styles.buttonContainer} /* onPress={handleQuit} */>
-                        <Text style={styles.buttonText}>Editar informações</Text>
-                    </TouchableOpacity>
-                    <InputGray label={'Nome do Perfil'} valueComponent={'Genivalda Pereira'}/>
+                    <ViewGray label={'Nome do Perfil'} valueComponent={'Genivalda Pereira'}/>
                 </View>
             </View>
             <View style={styles.userProfileBottom}>
-                <InputGray label={'Nome completo'} valueComponent={'Genivalda da costa pereira '}/>
-                <InputGray label={'Cidade'} valueComponent={'Campina Grande'}/>
-                <InputGray label={'Estado'} valueComponent={'Paraíba'}/>
-                <InputGray label={'Outras informações'} valueComponent={''}/>
+                <ViewGray label={'Nome completo'} valueComponent={'Genivalda da costa pereira '}/>
+                <ViewGray label={'Cidade'} valueComponent={'Campina Grande'}/>
+                <ViewGray label={'Estado'} valueComponent={'Paraíba'}/>
+                <ViewGray label={'Outras informações'} valueComponent={''}/>
             </View>
         </View>
     )
