@@ -10,6 +10,7 @@ import {
   View,
   TouchableWithoutFeedback,
   TouchableOpacity,
+  useWindowDimensions,
 } from 'react-native';
 import styles from './styles';
 
@@ -17,14 +18,16 @@ import IconFW from '@expo/vector-icons/Ionicons';
 
 import ImgProfile from '../../../assets/user/user_image.png';
 import GraphicHome from '../../../assets/home/graphic_home2.png';
+import Dimensions from '../../utils/Dimensions';
 
 const ButtonBot = ({label, nameIcon, screenNav}) =>{
 
     const navigation = useNavigation();
+    const width = Dimensions.getWidthPorc(40);
 
     return(
         <TouchableOpacity onPress={() => navigation.navigate(screenNav)}>
-            <View style={styles.buttonBottomContainer}>
+            <View style={[styles.buttonBottomContainer, {width: width, height: width} ]}>
                 <Text style={styles.buttonText}>{label}</Text>
                 <IconFW name={nameIcon} size={58} color={'black'}/>
             </View>
@@ -64,7 +67,7 @@ function Home(){
             </View>
             <View style={styles.homeBottom}>
                 <View style={styles.bottomContainer2}>
-                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone' screenNav={'Reminders'} />
+                    <ButtonBot label='Lembretes' nameIcon='ios-megaphone' screenNav={'Reminders'}/>
                     <ButtonBot label='Dicas gerais' nameIcon='ios-information-circle' screenNav={'TipsAll'}/>
                 </View>
                 <View style={styles.bottomContainer2}>

@@ -82,16 +82,15 @@ homeBottom: {
 bottomContainer2: {
     flexDirection: 'row',
     width: '100%',
-    height: '45%',
+    height: 'auto',
     alignItems: 'center',
-    justifyContent: 'space-evenly',
+    justifyContent: 'center',
+    gap: 18,
     paddingRight: 12,
     paddingLeft: 12,
 },
 
 buttonBottomContainer: {
-    width: 170,
-    height: 170,
     justifyContent: 'space-around',
     alignItems: 'center',
     backgroundColor: '#DDD6FE',

@@ -22,11 +22,12 @@ optionITContainer: {
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    gap: 24,
+    maxWidth: '90%',
+
 },
 
 optionText: {
-    fontSize: 15,
+    fontSize: 14,
     fontWeight: 600,
     color: 'black',
     textAlign: 'left',

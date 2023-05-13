@@ -15,6 +15,7 @@ import ImgProfile from '../../../assets/user/user_image.png';
 import IconFW from '@expo/vector-icons/Ionicons';
 import IconMC from '@expo/vector-icons/MaterialCommunityIcons';
 import { RecordsFisi, RecordsGLice, RecordsInsu, RecordsNutri } from './RecordsViews';
+import Dimensions from '../../utils/Dimensions';
 
 const InfoItem = ({type, label, styled}) =>{
     return(
@@ -25,9 +26,12 @@ const InfoItem = ({type, label, styled}) =>{
 }
 
 const ButtonBot = ({label, nameIcon, pressed}) =>{
+
+    const width = Dimensions.getWidthPorc(40);
+
     return(
         <TouchableOpacity onPress={pressed}>
-            <View style={styles.buttonMidContainer}>
+            <View style={[styles.buttonMidContainer, {width: width, height: width} ]}>
                 <Text style={styles.buttonText}>{label}</Text>
                 <IconFW name={nameIcon} size={58} color={'black'}/>
             </View>
@@ -36,9 +40,12 @@ const ButtonBot = ({label, nameIcon, pressed}) =>{
 }
 
 const ButtonBot2 = ({label, nameIcon, pressed}) =>{
+
+    const width = Dimensions.getWidthPorc(40);
+
     return(
         <TouchableOpacity onPress={pressed}>
-            <View style={styles.buttonMidContainer}>
+            <View style={[styles.buttonMidContainer, {width: width, height: width}]}>
                 <Text style={styles.buttonText}>{label}</Text>
                 <IconMC name={nameIcon} size={58} color={'black'}/>
             </View>

@@ -24,6 +24,7 @@ import TipsFisi from './Home/TipsFisi';
 import TipsNutri from './Home/TipsNutri';
 import UserEditProfile from './ProfileScreens/UserProfile/edit';
 import UserEditAccount from './ProfileScreens/UserAccount/edit';
+import TipScreen from './Home/TipScreen';
 
 //import BarNavigate from './BarNavigate';
 
@@ -55,6 +56,7 @@ function Routes(){
           <Stack.Screen name="TipsAll" component={TipsAll}/>
           <Stack.Screen name="TipsFisi" component={TipsFisi}/>
           <Stack.Screen name="TipsNutri" component={TipsNutri}/>
+          <Stack.Screen name="TipScreen" component={TipScreen}/>
 
           {/* Profile */}
 
