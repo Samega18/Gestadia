@@ -25,6 +25,7 @@ import TipsNutri from './Home/TipsNutri';
 import UserEditProfile from './ProfileScreens/UserProfile/edit';
 import UserEditAccount from './ProfileScreens/UserAccount/edit';
 import TipScreen from './Home/TipScreen';
+import { StatusBar } from 'react-native';
 
 //import BarNavigate from './BarNavigate';
 
@@ -34,11 +35,24 @@ import TipScreen from './Home/TipScreen';
 const Stack = createNativeStackNavigator();
 
 function Routes(){
+
+  const [ topIOS, setTopIOS ] = React.useState(100);
+
+  React.useEffect(() =>{
+
+      if(Platform.OS == 'android'){
+        setTopIOS(0);
+      }else if(Platform.OS == 'ios'){
+        setTopIOS(StatusBar.currentHeight());
+      }
+
+    },[])
+
   return (
    
       <NavigationContainer>
         <Stack.Navigator  screenOptions={{
-          headerShown: false}} initialRouteName='Preload'>
+          headerShown: false,}} initialRouteName='Preload'>
           <Stack.Screen name="Preload" component={PreloadScreen}/>
           <Stack.Screen name="Login" component={LoginScreen}/>
           <Stack.Screen name="Register" component={RegisterScreen}/>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     SafeAreaView,
     StatusBar,
@@ -9,6 +9,7 @@ import {
     Vibration,
     Image,
     View,
+    Platform,
   } from 'react-native';
 import styles from './styles';
 
@@ -55,7 +56,22 @@ function BarNavigate({ navigation }){
 
     function changeScreen(value){
       setScreenSelected(value);
-      Vibration.vibrate(50);
+
+      // if(Platform.OS == 'android'){
+      //   Vibration.vibrate(50);
+      //   alert('android');
+      // }else if(Platform.OS == 'ios'){
+      //   Vibration.vibrate(5);
+      //   alert('ios');
+      // }
+
+      const pattern = Platform.select({
+        ios: [0, 59],
+        android: [0, 59],
+      });
+      
+      Vibration.vibrate(pattern, 0);
+      //Vibration.cancel();
     }
 
     return (

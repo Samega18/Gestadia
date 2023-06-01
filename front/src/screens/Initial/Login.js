@@ -161,7 +161,7 @@ const styles = StyleSheet.create({
     gap: 20,
   },
   inputContainer: {
-    width: '80%',
+    width: '85%',
   },
   label: {
     fontSize: 14,
@@ -172,8 +172,9 @@ const styles = StyleSheet.create({
   label2: {
     fontSize: 16,
     color: 'white',
+    textAlign: 'right',
     marginTop: 4,
-    marginLeft: '35%',
+    marginRight: 4,
   },
   input: {
     width: '100%',
